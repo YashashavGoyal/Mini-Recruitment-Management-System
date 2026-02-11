@@ -8,6 +8,7 @@ import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import jobRoutes from './routes/jobRoutes.js';
 import candidateRoutes from './routes/candidateRoutes.js';
+import applicationRoutes from './routes/applicationRoutes.js';
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 // App Routes
 app.use('/api/jobs', jobRoutes);
 app.use('/api/candidates', candidateRoutes);
+app.use('/api/applications', applicationRoutes);
 
 // Error Handling
 app.use(notFound);

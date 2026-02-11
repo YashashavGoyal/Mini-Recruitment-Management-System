@@ -4,6 +4,7 @@ import {
     getJobs,
     getJobById
 } from '../controllers/jobController.js';
+import { getJobApplications } from '../controllers/applicationController.js';
 
 const router = express.Router();
 
@@ -13,5 +14,8 @@ router.route('/')
 
 router.route('/:id')
     .get(getJobById);
+
+router.route('/:id/applications')
+    .get(getJobApplications);
 
 export default router;

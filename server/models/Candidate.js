@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 const candidateSchema = new mongoose.Schema({
     fullName: {
         type: String,
-        required: [true, 'Please add a full name'],
+        required: true,
         trim: true
     },
     email: {
         type: String,
-        required: [true, 'Please add an email'],
+        required: true,
         unique: true,
         match: [
             /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -17,23 +17,23 @@ const candidateSchema = new mongoose.Schema({
     },
     phone: {
         type: String,
-        required: [true, 'Please add a phone number']
+        required: true
     },
     experience: {
         type: Number,
-        required: [true, 'Please add years of experience']
+        required: true
     },
     currentCompany: {
         type: String,
-        required: [true, 'Please add current company']
+        required: true
     },
     skills: {
-        type: [String], // Array of strings
-        required: [true, 'Please add at least one skill']
+        type: [String],
+        required: true
     },
     resumeLink: {
         type: String,
-        required: [true, 'Please add a resume link']
+        required: true
     }
 }, {
     timestamps: true
